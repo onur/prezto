@@ -18,27 +18,37 @@ fi
 
 # Cleans the cache.
 alias debc='sudo apt-get clean && sudo apt-get autoclean'
+alias aptc='sudo aptitude clean'
 
 # Displays a file's package.
 alias debf='apt-file search --regexp'
+alias aptf='aptitude search'
+alias apts='aptitude search'
 
 # Installs packages from repositories.
 alias debi='sudo apt-get install'
+alias apti='sudo aptitude install'
 
 # Installs packages from files.
 alias debI='sudo dpkg -i'
 
 # Displays package information.
 alias debq='apt-cache show'
+alias aptq='apt-cache show'
 
 # Updates the package lists.
 alias debu='sudo apt-get update'
+alias aptu='sudo aptitude update'
 
 # Upgrades outdated packages.
 alias debU='sudo apt-get update && sudo apt-get dist-upgrade'
+alias aptu='sudo aptitude update && sudo aptitude safe-upgrade'
+alias aptU='sudo aptitude update && sudo aptitude dist-upgrade'
 
 # Removes packages.
 alias debx='sudo apt-get remove'
+alias aptr='sudo aptitude remove'
+alias aptp='sudo aptitude purge'
 
 # Removes packages, their configuration, and unneeded dependencies.
 alias debX='sudo apt-get remove --purge && sudo apt-get autoremove --purge'
