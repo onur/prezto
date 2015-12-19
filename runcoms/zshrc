@@ -14,6 +14,5 @@ fi
 source ~/.bash_aliases
 
 # Customize to your needs...
-export PATH=$PATH:~/perl5/bin
+export PATH=$PATH:~/perl5/bin:~/.cargo/bin
 export PERL5LIB=~/perl5/lib/perl5
-
