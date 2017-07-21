@@ -37,27 +37,18 @@ function prompt_skwp_setup {
   add-zsh-hook precmd prompt_skwp_precmd
 
   # Use extended color pallete if available.
-  if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
-    _prompt_skwp_colors=(
-      "%F{81}"  # Turquoise
-      "%F{166}" # Orange
-      "%F{135}" # Purple
-      "%F{161}" # Hotpink
-      "%F{118}" # Limegreen
-    )
-  else
-    _prompt_skwp_colors=(
-      "%F{cyan}"
-      "%F{yellow}"
-      "%F{magenta}"
-      "%F{red}"
-      "%F{green}"
-    )
-  fi
+  _prompt_skwp_colors=(
+          "%F{cyan}"
+          "%F{yellow}"
+          "%F{magenta}"
+          "%F{red}"
+          "%F{green}"
+          "%F{blue}"
+          )
 
   # Set git-info parameters.
   zstyle ':prezto:module:git:info' verbose 'yes'
-  zstyle ':prezto:module:git:info:branch' format "${_prompt_skwp_colors[1]}%b%f"
+  zstyle ':prezto:module:git:info:branch' format "${_prompt_skwp_colors[5]}%b%f"
   zstyle ':prezto:module:git:info:added' format "${_prompt_skwp_colors[5]}●%f"
   zstyle ':prezto:module:git:info:deleted' format "${_prompt_skwp_colors[2]}●%f"
   zstyle ':prezto:module:git:info:modified' format "${_prompt_skwp_colors[4]}●%f"
@@ -68,7 +59,7 @@ function prompt_skwp_setup {
   zstyle ':prezto:module:ruby:info:version' format '[%v]'
 
   # Define prompts.
-  PROMPT="${_prompt_skwp_colors[3]}%n%f@${_prompt_skwp_colors[2]}%m%f ${_prompt_skwp_colors[5]}%~%f "'${git_info:+${(e)git_info[prompt]}}'"$ "
+  PROMPT="${_prompt_skwp_colors[3]}%n%f@${_prompt_skwp_colors[2]}%m%f:%B${_prompt_skwp_colors[6]}%~%b%f"'${git_info:+${(e)git_info[prompt]}}'"$ "
   RPROMPT='%F{blue}${ruby_info[version]}'
 }
 
